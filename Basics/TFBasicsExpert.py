@@ -78,21 +78,21 @@ def testStep(images, labels):
 EPOCHS = 5
 
 for epoch in range(EPOCHS):
-  # Reset the metrics at the start of the next epoch
-  trainLoss.reset_states()
-  trainAccuracy.reset_states()
-  testLoss.reset_states()
-  testAccuracy.reset_states()
+    # Reset the metrics at the start of the next epoch
+    trainLoss.reset_states()
+    trainAccuracy.reset_states()
+    testLoss.reset_states()
+    testAccuracy.reset_states()
 
-  for images, labels in train:
-    trainStep(images, labels)
+    for images, labels in train:
+        trainStep(images, labels)
 
-  for test_images, test_labels in test:
-    testStep(test_images, test_labels)
+    for test_images, test_labels in test:
+        testStep(test_images, test_labels)
 
-  template = 'Epoch {}, Loss: {}, Accuracy: {}, Test Loss: {}, Test Accuracy: {}'
-  print(template.format(epoch+1,
-                        trainLoss.result(),
-                        trainAccuracy.result()*100,
-                        testLoss.result(),
-                        testAccuracy.result()*100))
+    template = 'Epoch {}, Loss: {}, Accuracy: {}, Test Loss: {}, Test Accuracy: {}'
+    print(template.format(epoch + 1,
+                          trainLoss.result(),
+                          trainAccuracy.result() * 100,
+                          testLoss.result(),
+                          testAccuracy.result() * 100))
