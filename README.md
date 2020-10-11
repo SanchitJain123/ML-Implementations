@@ -1,2 +1,2 @@
 # MLPractice
-In this repo, I have applied various tasks of machine learning
+This repo contains implementations of various machine learning problems.
